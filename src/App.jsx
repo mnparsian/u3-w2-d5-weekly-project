@@ -11,14 +11,12 @@ function App() {
   return (
     <>
       <BrowserRouter>
-      <MyNav/>
+        <MyNav />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/detail/:city" element={ <Detail />} />
+          <Route path="/detail/:city" element={<Detail />} />
         </Routes>
       </BrowserRouter>
-
-      
     </>
   );
 }

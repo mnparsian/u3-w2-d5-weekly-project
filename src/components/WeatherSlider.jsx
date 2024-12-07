@@ -47,7 +47,7 @@ const WeatherSlider = ({ recentCities }) => {
       <Slider {...settings}>
         {weatherData.map((city, index) => (
           <div key={index} className="d-flex justify-content-center">
-            <Card style={{ width: "30rem" }} className="p-3 shadow-lg bg-light">
+            <Card style={{ width: "30rem" }} className="p-3 shadow-lg bg-light my-5">
               <div className="d-flex align-items-center">
                 <div style={{ flex: "1", textAlign: "center" }}>
                   <img src={city.icon} alt={city.description} style={{ width: "100px", height: "100px" }} />
@@ -55,8 +55,8 @@ const WeatherSlider = ({ recentCities }) => {
 
                 <div style={{ flex: "2", textAlign: "center" }}>
                   <Card.Body>
-                    <Card.Title className="display-4">{city.temp}</Card.Title>
-                    <Card.Text className="fs-5 text-muted">{city.name.toUpperCase()}</Card.Text>
+                    <Card.Title className="display-4 temperature">{city.temp}</Card.Title>
+                    <Card.Text className="fs-5 text-muted city-name">{city.name.toUpperCase()}</Card.Text>
                     <Card.Text className="text-muted">{city.description}</Card.Text>
                   </Card.Body>
                 </div>

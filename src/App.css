@@ -1,34 +1,104 @@
-.movie-poster {
-    height: 350px; 
-    width: 100%; 
-    object-fit: cover; 
-  }
-  
+/* General Styling */
+body {
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(to bottom, #f7fbff, #eaf4ff);
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
 
-  .margin-left-md {
-    margin-left: 0; 
-  }
-  @media (min-width: 992px) {
-    .margin-left-md {
-      margin-left: 150px; 
-    }
+/* Navbar */
+.navbar {
+  background-color: #003366;
+  color: white;
+}
+
+.nav-link {
+  color: white !important;
+  font-weight: bold;
+}
+
+/* Top Section */
+.main {
+  padding: 20px;
+}
+
+.main img {
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.main h1 {
+  font-size: 2.5rem;
+  color: #003366;
+}
+
+/* Weather Cards */
+.card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+}
+
+.card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  color: #ff4d4d;
+  font-weight: bold;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  color: #003366;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Row and Col Styling */
+.row {
+  margin: 0 -15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.col {
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.col .card {
+  width: 100%;
+  max-width: 250px;
+}
+
+/* Forecast Section */
+h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #003366;
+  margin-bottom: 30px;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .col .card {
+    max-width: 100%;
   }
 
-  @media (min-width: 1200px) {
-    .margin-left-md {
-      margin-left: 175px; 
-    }
-  }
-  
-  @media (min-width: 1401px) {
-    .margin-left-md {
-      margin-left: 206px; 
-    }
+  h1 {
+    font-size: 2rem;
   }
 
-  .color{
-    background-color: rgb(48, 48, 125) !important;
+  h2 {
+    font-size: 1.5rem;
   }
-  .bg-color{
-    background: linear-gradient(15deg, rgba(82,180,156,1) 0%, rgba(71,191,191,1) 59%, rgba(9,218,238,1) 100%, rgba(64,63,63,1) 100%)!important;
-  }
+}

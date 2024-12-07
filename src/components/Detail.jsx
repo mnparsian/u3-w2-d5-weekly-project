@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Badge, Card, Col, Container, Row } from "react-bootstrap";
+import { Badge, Card, Col, Container, Image, Row } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 
 const Detail = () => {
@@ -69,7 +69,7 @@ const Detail = () => {
   return (
     <main className="bg-light">
       <Container className="">
-        <Row className="pt-3">
+        <Row className="pt-3 border rounded p-3">
           <Col xs={12} md={8} className="text-center mb-4">
             {cityImage ? (
               <img
@@ -86,34 +86,33 @@ const Detail = () => {
             )}
           </Col>
           <Col xs={12} md={4}>
-            <Card bg="light" text="black" className="h-auto w-100">
-              <Card.Header>
-                {date} {time}
-              </Card.Header>
-              <Card.Body>
-                <Card.Title className="fs-1 text-center">{city ? city.toUpperCase() : "Unknown City"}</Card.Title>
-                <Card.Text as="div">
-                  <div className="d-flex align-items-center justify-content-center mx-0 px-0">
-                    <h1 className="text-center">{kelvinToCelsius(weatherData.main.temp)}°C</h1>
-                    <img
-                      src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`}
-                      alt="Weather Icon"
-                      style={{ maxWidth: "100px", height: "auto" }}
-                    />
-                  </div>
-                  <div className="d-flex flex-column justify-content-start">
-                    <h4 className="text-start">
-                      Feels like: <Badge>{kelvinToCelsius(weatherData.main.feels_like)}°C</Badge>
-                    </h4>
-                    <h4 className="text-start">{weatherData.weather[0].description}</h4>
-                    <h4 className="text-start">Pressure: {weatherData.main.pressure}</h4>
-                    <h4 className="text-start">Humidity: {weatherData.main.humidity}%</h4>
-                  </div>
-                </Card.Text>
-              </Card.Body>
-            </Card>
+            <div className="d-flex flex-column h-100 w-100">
+              <div className="text-center mb-3">
+                <strong>
+                  {date} {time}
+                </strong>
+              </div>
+              <h1 className="fs-1 text-center">{city ? city.toUpperCase() : "Unknown City"}</h1>
+              <div className="d-flex align-items-center justify-content-center my-3">
+                <h1 className="mb-0">{kelvinToCelsius(weatherData.main.temp)}°C</h1>
+                <img
+                  src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`}
+                  alt="Weather Icon"
+                  style={{ maxWidth: "100px", height: "auto" }}
+                />
+              </div>
+              <div className="text-start">
+                <h4>
+                  Feels like: <Badge>{kelvinToCelsius(weatherData.main.feels_like)}°C</Badge>
+                </h4>
+                <h4>{weatherData.weather[0].description}</h4>
+                <h4>Pressure: {weatherData.main.pressure}</h4>
+                <h4>Humidity: {weatherData.main.humidity}%</h4>
+              </div>
+            </div>
           </Col>
         </Row>
+
         <h2>5-Day Forecast</h2>
         {Object.entries(forecastData).map(([date, forecasts]) => (
           <div key={date}>
